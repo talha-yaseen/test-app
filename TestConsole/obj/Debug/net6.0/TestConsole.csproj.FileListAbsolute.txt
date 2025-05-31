@@ -1,0 +1,15 @@
+/Users/talhayaseen/Projects/TestApp/TestConsole/bin/Debug/net6.0/TestConsole
+/Users/talhayaseen/Projects/TestApp/TestConsole/bin/Debug/net6.0/TestConsole.deps.json
+/Users/talhayaseen/Projects/TestApp/TestConsole/bin/Debug/net6.0/TestConsole.runtimeconfig.json
+/Users/talhayaseen/Projects/TestApp/TestConsole/bin/Debug/net6.0/TestConsole.dll
+/Users/talhayaseen/Projects/TestApp/TestConsole/bin/Debug/net6.0/TestConsole.pdb
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.csproj.AssemblyReference.cache
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.GeneratedMSBuildEditorConfig.editorconfig
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.AssemblyInfoInputs.cache
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.AssemblyInfo.cs
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.csproj.CoreCompileInputs.cache
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.dll
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/refint/TestConsole.dll
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.pdb
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/TestConsole.genruntimeconfig.cache
+/Users/talhayaseen/Projects/TestApp/TestConsole/obj/Debug/net6.0/ref/TestConsole.dll

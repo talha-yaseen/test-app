@@ -1,0 +1,17 @@
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/TestApp
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/appsettings.Development.json
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/appsettings.json
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/TestApp.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/TestApp.deps.json
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/TestApp.runtimeconfig.json
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/TestApp.pdb
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/DnsClient.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/Microsoft.OpenApi.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/MongoDB.Bson.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/MongoDB.Driver.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/SharpCompress.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/Snappier.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/Swashbuckle.AspNetCore.Swagger.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/talhayaseen/Projects/TestApp/TestApp/obj/Release/net6.0/PubTmp/Out/ZstdSharp.dll
