@@ -19,11 +19,13 @@
     <None Remove="Entities\" />
     <None Remove="Services\" />
     <None Remove="Middleware\" />
+    <None Remove="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Entities\" />
     <Folder Include="Services\" />
     <Folder Include="Middleware\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
 </Project>

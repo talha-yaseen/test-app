@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<DbContext>();
 builder.Services.AddMemoryCache();
-builder.Services.AddHostedService<TestService>();
+//builder.Services.AddHostedService<TestService>();
 
 var app = builder.Build();
 
