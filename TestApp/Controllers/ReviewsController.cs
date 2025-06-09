@@ -1,10 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using TestApp.Entities;
 using TestApp.Data;
 using TestApp.DTOs;
 using MongoDB.Driver;
 using Microsoft.Extensions.Caching.Memory;
 using System.Text;
+using CsvHelper;
+using CsvHelper.Configuration;
+using SharpCompress.Common;
+using System.Data;
+using System.Globalization;
+using System.Runtime.InteropServices;
 
 namespace TestApp.Controllers;
 
@@ -26,13 +33,12 @@ public class ReviewsController : ControllerBase
     [HttpGet("GetMovies")]
     public async Task<ActionResult> GetMovies()
     {
-        List<Movie> movies;
-        if (!_memoryCache.TryGetValue("Movies", out movies))
+        List<Movie> movies = await _memoryCache.GetOrCreateAsync("Movies", async data =>
         {
-            movies = _context.Movies.Find(FilterDefinition<Movie>.Empty).Limit(100).ToList();
-            _memoryCache.Set("Movies", movies, TimeSpan.FromMinutes(5));
-        }
-        
+            _logger.LogInformation("Getting movies from MongoDB...");
+            data.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
+            return await _context.Movies.Find(FilterDefinition<Movie>.Empty).Limit(100).ToListAsync();
+        });
         return Ok(movies);
     }
 
@@ -100,6 +106,62 @@ public class ReviewsController : ControllerBase
             }
         }
         await System.IO.File.WriteAllTextAsync("/Users/talhayaseen/Downloads/csv-parser/updated-list.csv", updatedList.ToString());
+        return Ok("Done");
+    }
+
+    [HttpGet("UpdateCSV")]
+    public async Task<ActionResult> UpdateCSV()
+    {
+        var leadsTable = new DataTable();
+        using var reader = new StreamReader("/Users/talhayaseen/Downloads/csv-parser/sheet-1.csv");
+        using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+        {
+            using (var dr = new CsvDataReader(csv))
+            {
+                leadsTable.Load(dr);
+            }
+        }
+
+        foreach (DataColumn col in leadsTable.Columns)
+        {
+            col.ReadOnly = false;
+        }
+
+        foreach (DataRow row in leadsTable.Rows)
+        {
+            if (row[2].ToString().Contains('@'))
+            {
+                string email = row[2].ToString();
+                row[2] = row[1].ToString();
+                row[1] = email;
+            }
+            if (!string.IsNullOrEmpty(row[2].ToString()))
+            {
+                string phone = row[2].ToString();
+                phone = phone.Replace(" ", "").Replace("-", "");
+                row[2] = $"+1{phone}";
+            }
+        }
+
+        using (var writer = new StreamWriter("/Users/talhayaseen/Downloads/csv-parser/sheet-1-updated.csv"))
+        using (var csv = new CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture)))
+        {
+            foreach (DataColumn column in leadsTable.Columns)
+            {
+                csv.WriteField(column.ColumnName);
+            }
+            csv.NextRecord();
+
+            foreach (DataRow row in leadsTable.Rows)
+            {
+                foreach (DataColumn column in leadsTable.Columns)
+                {
+                    csv.WriteField(row[column]);
+                }
+                csv.NextRecord();
+            }
+        }
+
         return Ok("Done");
     }
 
